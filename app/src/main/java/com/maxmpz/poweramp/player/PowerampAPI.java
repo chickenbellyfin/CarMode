@@ -80,12 +80,12 @@ public final class PowerampAPI {
     public static final class Commands {
         /**
          * Extras:
-         * - keepService - boolean - (optional) if true, Poweramp won't unload player service. Notification will be appropriately updated.
+         * - keepService - boolean - (optional) if true, Poweramp won't unload player service. Notification will be appropriately onPowerampUpdate.
          */
         public static final int TOGGLE_PLAY_PAUSE = 1;
         /**
          * Extras:
-         * - keepService - boolean - (optional) if true, Poweramp won't unload player service. Notification will be appropriately updated.
+         * - keepService - boolean - (optional) if true, Poweramp won't unload player service. Notification will be appropriately onPowerampUpdate.
          */
         public static final int PAUSE = 2;
         public static final int RESUME = 3;
@@ -414,7 +414,7 @@ public final class PowerampAPI {
     public static final String ACTION_TRACK_CHANGED = "com.maxmpz.audioplayer.TRACK_CHANGED";
 
     /**
-     * Album art was changed. Album art can be the same for whole album/folder, thus usually it will be updated less frequently comparing to TRACK_CHANGE.
+     * Album art was changed. Album art can be the same for whole album/folder, thus usually it will be onPowerampUpdate less frequently comparing to TRACK_CHANGE.
      * If both aaPath and aaBitmap extras are missing that means no album art exists for the current track(s).
      * Note that there is no direct Album Art to track relation, i.e. both track and album art can change independently from each other -
      * for example - when new album art asynchronously downloaded from internet or selected by user.

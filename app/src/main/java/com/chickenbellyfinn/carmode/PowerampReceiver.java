@@ -24,7 +24,7 @@ public class PowerampReceiver extends BroadcastReceiver {
     }};
 
     interface PowerampListener {
-        public void updated();
+        public void onPowerampUpdate();
     }
 
     private PowerampListener listener;
@@ -75,7 +75,7 @@ public class PowerampReceiver extends BroadcastReceiver {
         }
 
         if(listener != null){
-            listener.updated();
+            listener.onPowerampUpdate();
         }
     }
 
