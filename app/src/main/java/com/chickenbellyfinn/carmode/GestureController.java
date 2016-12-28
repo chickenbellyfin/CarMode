@@ -49,7 +49,6 @@ public class GestureController {
     private PointF downLocation;
 
     private Timer timer;
-    private PowerampController powerampController;
     private PowerampReceiver poweramp;
 
     public GestureController(Activity activity, ImageView view, PowerampReceiver poweramp){
@@ -57,7 +56,6 @@ public class GestureController {
         this.preview = view;
         this.poweramp = poweramp;
 
-        powerampController = new PowerampController(activity);
         timer = new Timer();
 
         Point winSize = new Point();
@@ -90,16 +88,16 @@ public class GestureController {
     private void gestureDetected(int gesture){
         switch (gesture){
             case GESTURE_LEFT:
-                powerampController.next();
+                poweramp.next();
                 break;
             case GESTURE_RIGHT:
-                powerampController.prev();
+                poweramp.prev();
                 break;
             case GESTURE_UP:
                 // unused
                 break;
             case GESTURE_DOWN:
-                powerampController.playPause();
+                poweramp.playPause();
                 break;
         }
     }
